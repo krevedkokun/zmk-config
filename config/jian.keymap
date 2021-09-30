@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
 
@@ -43,10 +44,10 @@
                 };
                 rst {
                         bindings = <
-   &none &none &none    &none  &none    &none    &reset     &reset &none    &none    &none    &none    &none &none
+   &none &none &none &none &none &none &reset          &reset      &none &none &none &none &none &none
          &none &none &none &none &none &bootloader     &bootloader &none &none &none &none &none
-         &none &none   &none &none   &none   &none        &none    &none   &none   &none   &none   &none
-                                         &none &none &none     &none &none &none
+         &none &none &none &none &none &bt BT_CLR      &bt BT_CLR  &none &none &none &none &none
+                                 &none &none &none     &none &none &none
                         >;
                 };
         };
