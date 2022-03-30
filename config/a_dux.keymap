@@ -33,10 +33,10 @@
 		};
 		bt_layer {
 			bindings = <
-&kp Q     &kp W     &kp E     &kp R     &bootloader                       &bootloader &kp U     &kp I     &kp O     &kp P
-&kp A     &kp S     &kp D     &kp F     &reset                            &reset      &kp J     &kp K     &kp L     &kp SEMI
-&kp Z     &kp X     &kp C     &kp V     &bt BT_CLR                        &bt BT_CLR  &kp M     &kp COMMA &kp DOT   &kp SLASH
-                                        &kp TAB   &none             &none &kp ENTER
+&none &none &none &none &bootloader      &bootloader &none &none &none &none
+&none &none &none &none &reset           &reset      &none &none &none &none
+&none &none &none &none &bt BT_CLR       &bt BT_CLR  &none &none &none &none
+                &none &none        &none &none
 			>;
 		};
 
