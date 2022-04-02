@@ -30,7 +30,7 @@
     base_layer {
       bindings = <
 	&kp Q       &kp W       &kp F        &kp P         &kp B     &kp J     &kp L         &kp U        &kp Y       &kp SQT
-	&hm LGUI  A &hm LALT R  &hm LCTRL S  &hm LSHIFT T  &kp G     &kp M     &hm RSHIFT N  &hm RCTRL E  &hm LALT I  &hm RGUI O
+	&mt LGUI  A &mt LALT R  &mt LCTRL S  &mt LSHIFT T  &kp G     &kp M     &mt RSHIFT N  &mt RCTRL E  &mt LALT I  &mt RGUI O
 	&lt SVC Z   &kp X       &kp C        &kp D         &kp V     &kp K     &kp H         &kp COMMA    &kp DOT     &lt SVC FSLH
 	                                        &kp TAB &kp BSPC     &lt SYM SPACE &lt NUM ENTER
 	>;
