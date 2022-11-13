@@ -51,7 +51,7 @@
   };
 
   behaviors {
-    lhr: left_home_row {
+    lhm: left_home_row {
       compatible = "zmk,behavior-hold-tap";
       label = "LEFT_HOME_ROW";
       #binding-cells = <2>;
@@ -59,9 +59,13 @@
       tapping-term-ms = <100>;
       quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
-      //hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+      /*hold-trigger-key-positions = <
+	5 6 7 8 9
+	15 16 17 18 19
+	25 26 27 28 29
+	>;*/
     };
-    rhr: right_home_row {
+    rhm: right_home_row {
       compatible = "zmk,behavior-hold-tap";
       label = "RIGHT_HOME_ROW";
       #binding-cells = <2>;
@@ -69,7 +73,11 @@
       tapping-term-ms = <100>;
       quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
-      //hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+      /*hold-trigger-key-positions = <
+	0 1 2 3 4
+	10 11 12 13 14
+	20 21 22 23 24
+	>;*/
     };
   };
 
@@ -79,7 +87,7 @@
     base_layer {
       bindings = <
 	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O       &kp P
-	&lhr LGUI A &lhr LALT S &lhr LCTRL D &lhr LSHFT F &kp G &kp H &rhr LSHFT J &rhr LCTRL K &rhr LALT L &rhr LGUI SQT
+	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L &rhm LGUI SQT
 	&kp Z       &kp X       &kp C        &kp V        &kp B &kp N &kp M        &kp COMMA    &kp DOT     &kp SLASH
 	&kp SPC &kp TAB &lt 2 ENTER &lt 1 BSPC
 	>;
