@@ -8,25 +8,56 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+  combos {
+    compatible = "zmk,combos";
+
+    combo_lbkt {
+      timeout-ms = <50>;
+      key-positions = <0 10>;
+      bindings = <&kp LBKT>;
+      layers = <0>;
+    };
+
+    combo_rbkt {
+      timeout-ms = <50>;
+      key-positions = <9 19>;
+      bindings = <&kp RBKT>;
+      layers = <0>;
+    };
+
+    combo_sqt {
+      timeout-ms = <50>;
+      key-positions = <19 29>;
+      bindings = <&kp SQT>;
+      layers = <0>;
+    };
+
+    combo_grave {
+      timeout-ms = <50>;
+      key-positions = <9 20>;
+      bindings = <&kp GRAVE>;
+      layers = <0>;
+    };
+  };
 
   keymap {
     compatible = "zmk,keymap";
 
     base_layer {
       bindings = <
-	&kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P
-	&kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI
-	&kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
-	&kp SPC   &kp TAB  &lt 2 ENTER &lt 1 BSPC
+	&kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &kp P
+	&kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
+	&kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH
+	&kp SPC &kp TAB &lt 2 ENTER &lt 1 BSPC
 	>;
     };
 
     num_layer {
       bindings = <
-	&none     &kp NUM_7     &kp NUM_8     &kp NUM_9     &none     &none     &none     &none     &none     &none
-	&none     &kp NUM_4     &kp NUM_5     &kp NUM_6     &none     &none     &none     &none     &none     &none
-	&none     &kp NUM_1     &kp NUM_2     &kp NUM_3     &none     &none     &none     &none     &none     &none
-	&none   &none  &none &none
+	&none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none &none &none &none &none &none
+	&none &kp NUM_4 &kp NUM_5 &kp NUM_6 &none &none &none &none &none &none
+	&none &kp NUM_1 &kp NUM_2 &kp NUM_3 &none &none &none &none &none &none
+	&none &NUM_0 &none &none
 	>;
     };
 
