@@ -44,13 +44,34 @@
     };
   };
 
+  behaviors {
+    lhr {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+    };
+    rhr {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
     base_layer {
       bindings = <
 	&kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &kp P
-	&kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
+	&lhr LGUI A &lhr LALT S &lhr LCTRL D &lhr LSHFT F &kp G &kp H &rhr LSHFT J &rhr LCTRL K &rhr LALT L &rhr LGUI SEMI
 	&kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH
 	&kp SPC &kp TAB &lt 2 ENTER &lt 1 BSPC
 	>;
@@ -75,4 +96,4 @@
     };
 
   };
-  };
+};
