@@ -9,7 +9,7 @@
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS>;
-}
+};
 
 / {
   combos {
