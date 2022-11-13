@@ -47,6 +47,7 @@
   behaviors {
     lhr:left_home_row {
       compatible = "zmk,behavior-hold-tap";
+      label = "LEFT_HOME_ROW";
       #binding-cells = <2>;
       flavor = "tap-unless-interrupted";
       tapping-term-ms = <100>;
@@ -56,6 +57,7 @@
     };
     rhr:right_home_row {
       compatible = "zmk,behavior-hold-tap";
+      label = "RIGHT_HOME_ROW";
       #binding-cells = <2>;
       flavor = "tap-unless-interrupted";
       tapping-term-ms = <100>;
