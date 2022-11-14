@@ -4,6 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+/* |  0 |  1 |  2 |  3 |  4 |    |   |    |  5 |  6 |  7 |  8 |  9 |
+   | 10 | 11 | 12 | 13 | 14 |    |   |    | 15 | 16 | 17 | 18 | 19 |
+   | 20 | 21 | 22 | 23 | 24 |    |   |    | 25 | 26 | 27 | 28 | 29 |
+   |    |    |    |    | 30 | 31 |   | 32 | 33 |    |    |    |    | */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -12,7 +17,7 @@
 };
 
 &lt {
-  quick-tap-ms = <150>;
+  quick-tap-ms = <175>;
 };
 
 / {
@@ -21,28 +26,28 @@
 
     combo_lbkt {
       timeout-ms = <50>;
-      key-positions = <0 10>;
+      key-positions = <5 15>;
       bindings = <&kp LBKT>;
       layers = <0>;
     };
 
     combo_rbkt {
       timeout-ms = <50>;
-      key-positions = <9 19>;
+      key-positions = <4 14>;
       bindings = <&kp RBKT>;
       layers = <0>;
     };
 
     combo_semi {
       timeout-ms = <50>;
-      key-positions = <19 29>;
+      key-positions = <14 24>;
       bindings = <&kp SEMI>;
       layers = <0>;
     };
 
     combo_grave {
       timeout-ms = <50>;
-      key-positions = <9 20>;
+      key-positions = <15 25>;
       bindings = <&kp GRAVE>;
       layers = <0>;
     };
@@ -54,14 +59,14 @@
     };
   };
 
-  behaviors {
-    lhm: left_home_row {
+  lhm {
+    behaviors: left_home_row {
       compatible = "zmk,behavior-hold-tap";
       label = "LEFT_HOME_ROW";
       #binding-cells = <2>;
       flavor = "balanced";
       tapping-term-ms = <200>;
-      quick-tap-ms = <150>;
+      quick-tap-ms = <175>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <
 	11 12 13 14
@@ -76,7 +81,7 @@
       #binding-cells = <2>;
       flavor = "balanced";
       tapping-term-ms = <200>;
-      quick-tap-ms = <150>;
+      quick-tap-ms = <175>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <
 	16 17 18 19
