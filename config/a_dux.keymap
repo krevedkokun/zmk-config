@@ -59,8 +59,8 @@
     };
   };
 
-  lhm {
-    behaviors: left_home_row {
+  behaviors {
+    lhm: left_home_row {
       compatible = "zmk,behavior-hold-tap";
       label = "LEFT_HOME_ROW";
       #binding-cells = <2>;
