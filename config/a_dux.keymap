@@ -18,6 +18,7 @@
 
 &lt {
   quick-tap-ms = <175>;
+  flavor = "tap-prefered";
 };
 
 / {
@@ -108,7 +109,7 @@
       bindings = <
 	&kp EQUAL &kp N7 &kp N8 &kp N9 &none &none &none     &none     &none    &none
 	&kp MINUS &kp N4 &kp N5 &kp N6 &none &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI
-	&kp SEMI  &kp N1 &kp N2 &kp N3 &none &none &none     &none     &none    &none
+	&kp BSHL  &kp N1 &kp N2 &kp N3 &none &none &none     &none     &none    &none
 	&kp N0 &none &none &none
 	>;
     };
