@@ -42,7 +42,7 @@
     combo_semi {
       timeout-ms = <50>;
       key-positions = <15 25>;
-      bindings = <&kp SEMI>;
+      bindings = <&kp P>;
       layers = <0>;
     };
 
@@ -115,7 +115,7 @@
     base_layer {
       bindings = <
 	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O       &kp SQT
-	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L &rhm LGUI P
+	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L &rhm LGUI SEMI
 	&kp Z       &kp X       &kp C        &kp V        &kp B &kp N &kp M        &kp COMMA    &kp DOT     &kp SLASH
 	&kp SPC &kp TAB &lt 2 ENTER &lt 1 BSPC
 	>;
