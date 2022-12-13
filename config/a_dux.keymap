@@ -17,7 +17,7 @@
 };
 
 &lt {
-  quick-tap-ms = <175>;
+  quick-tap-ms = <200>;
   flavor = "tap-preferred";
 };
 
@@ -41,15 +41,29 @@
 
     combo_semi {
       timeout-ms = <50>;
-      key-positions = <14 24>;
+      key-positions = <15 25>;
       bindings = <&kp SEMI>;
       layers = <0>;
     };
 
     combo_grave {
       timeout-ms = <50>;
-      key-positions = <15 25>;
+      key-positions = <14 24>;
       bindings = <&kp GRAVE>;
+      layers = <0>;
+    };
+
+    combo_esc {
+      timeout-ms = <50>;
+      key-positions = <30 31>;
+      bindings = <&kp ESC>;
+      layers = <0>;
+    };
+
+    combo_del {
+      timeout-ms = <50>;
+      key-positions = <32 33>;
+      bindings = <&kp DEL>;
       layers = <0>;
     };
 
@@ -67,7 +81,7 @@
       #binding-cells = <2>;
       flavor = "balanced";
       tapping-term-ms = <200>;
-      quick-tap-ms = <175>;
+      quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <
 	30 31 32 33
@@ -83,7 +97,7 @@
       #binding-cells = <2>;
       flavor = "balanced";
       tapping-term-ms = <200>;
-      quick-tap-ms = <175>;
+      quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <
 	30 31 32 33
@@ -100,8 +114,8 @@
 
     base_layer {
       bindings = <
-	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O       &kp P
-	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L &rhm LGUI SQT
+	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O       &kp SQT
+	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L &rhm LGUI P
 	&kp Z       &kp X       &kp C        &kp V        &kp B &kp N &kp M        &kp COMMA    &kp DOT     &kp SLASH
 	&kp SPC &kp TAB &lt 2 ENTER &lt 1 BSPC
 	>;
@@ -118,12 +132,16 @@
 
     sym_layer {
       bindings = <
-	&none &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR &none &none     &none     &none    &none
-	&none &kp DLLR &kp PRCNT &kp CARET &none    &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI
-	&none &kp EXCL &kp AT    &kp HASH  &none    &none &none     &none     &none    &none
+	&kp PLUS  &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR &none &none     &none     &none    &none
+	&kp UNDER &kp DLLR &kp PRCNT &kp CARET &none    &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI
+	&kp PIPE  &kp EXCL &kp AT    &kp HASH  &none    &none &none     &none     &none    &none
 	&none &none &none &none
 	>;
     };
 
   };
 };
+
+/* Local Variables: */
+/* mode: c */
+/* End: */
