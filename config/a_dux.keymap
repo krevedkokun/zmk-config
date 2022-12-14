@@ -141,9 +141,9 @@
 
     misc_layer {
       bindings = <
-	&none     &none     &none    &none    &none    &none    &none &none &none &none
-	&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &kp CAPS &none &none &none &none
-	&none     &none     &none    &none    &none    &none    &none &none &none &none
+	&none    &none    &none     &none     &none    &none &none    &none &none &none
+	&kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none    &none &kp CAPS &none &none &none
+	&none    &none    &none     &none     &none    &none &none    &none &none &none
 	&none &none &none &none
 	>;
     };
