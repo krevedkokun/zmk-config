@@ -11,6 +11,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS>;
@@ -117,7 +119,7 @@
 	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O         &kp SQT
 	&lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F &kp G &kp H &rhm LSHFT J &rhm LCTRL K &rhm LALT L   &rhm LGUI SEMI
 	&kp Z       &lhm RALT X &kp C        &kp V        &kp B &kp N &kp M        &kp COMMA    &rhm RALT DOT &kp SLASH
-	&kp SPC &lt 3 TAB &lt 2 ENTER &lt 1 BSPC
+	&lt 4 SPC &lt 3 TAB &lt 2 ENTER &lt 1 BSPC
 	>;
     };
 
@@ -144,6 +146,15 @@
 	&none    &none    &none     &none     &none    &none &none    &none        &none &none
 	&kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none    &none &kp CAPS &kp LS(CAPS) &none &none
 	&none    &none    &none     &none     &none    &none &none    &none        &none &none
+	&none &none &none &none
+	>;
+    };
+
+    ctrl_layer {
+      bindings = <
+	&none &none &none &none &bootloader   &bootloader &none        &none        &none        &none
+	&none &none &none &none &sys_reset    &sys_reset  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+	&none &none &none &none &none         &none       &out OUT_TOG &bt BT_CLR   &none        &none
 	&none &none &none &none
 	>;
     };
