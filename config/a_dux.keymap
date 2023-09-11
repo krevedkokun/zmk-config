@@ -19,7 +19,7 @@
 #define SYM      2
 #define MISC     3
 #define CTL      4
-#define GAME     5
+#define WORKMAN  5
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS>;
@@ -101,10 +101,10 @@
 
     base_layer {
       bindings = <
-	&kp Q       &kp W       &kp E        &kp R        &kp T &kp Y &kp U        &kp I        &kp O         &kp SQT
+	&kp Q      &kp W      &kp E       &kp R       &kp T &kp Y &kp U       &kp I       &kp O        &kp SQT
 	&hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G &kp H &hm LSHFT J &hm LCTRL K &hm LALT L   &hm LGUI SEMI
-	&kp Z       &hm RALT X &kp C        &kp V        &kp B &kp N &kp M        &kp COMMA    &hm RALT DOT &kp SLASH
-	&kp SPC &lt MISC TAB &lt SYM ENTER &lt NUM BSPC
+	&kp Z      &hm RALT X &kp C       &kp V       &kp B &kp N &kp M       &kp COMMA   &hm RALT DOT &kp SLASH
+	&lt CTL SPC &lt MISC TAB &lt SYM ENTER &lt NUM BSPC
 	>;
     };
 
@@ -128,9 +128,9 @@
 
     misc_layer {
       bindings = <
-	&none    &none    &none     &none     &none &to GAME &mo CTL  &none        &none &none
-	&kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none &none    &kp CAPS &kp LS(CAPS) &none &none
-	&none    &none    &none     &none     &none &none    &none    &none        &none &none
+	&none    &none    &none     &none     &none &to BASE &to WORKMAN &none        &none &none
+	&kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none &none    &kp CAPS    &kp LS(CAPS) &none &none
+	&none    &none    &none     &none     &none &none    &none       &none        &none &none
 	&none &none &none &none
 	>;
     };
@@ -143,13 +143,13 @@
 	&none &none &none &none
 	>;
     };
-
-    gaming_layer {
+ashtg
+    workman_hw_layer {
       bindings = <
-	&trans &trans &trans &trans &trans  &trans &trans &trans &trans  &trans
-	&kp A  &kp S &kp D   &kp F  &trans  &trans &kp J  &kp K  &kp L   &kp SEMI
-	&trans &kp X &trans  &trans &trans  &trans &trans &trans &kp DOT &trans
-	&kp LSHFT &kp SPC &to BASE &kp ESC
+	&kp Q      &kp D      &kp R       &kp W       &kp B  &kp J &kp F       &kp U       &kp P      &kp SQT
+        &hm LGUI A &hm LALT S &hm LCTRL H &hm LSHFT T &kp G  &kp Y &hm LSHFT N &hm LCTRL E &hm LALT O &hm LGUI I
+	&kp Z      &kp X      &kp M       &kp C       &kp V  &kp K &kp L       &kp COMMA   &kp DOT    &kp SLASH
+	&lt CTL SPC &lt MISC TAB &lt SYM ENTER &lt NUM BSPC
 	>;
     };
   };
