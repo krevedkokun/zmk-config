@@ -15,11 +15,11 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT  0
-#define NUM      1
-#define SYM      2
-#define MISC     3
-#define CTL      4
-#define WORKMAN  5
+#define WORKMAN  1
+#define NUM      2
+#define SYM      3
+#define MISC     4
+#define CTL      5
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS>;
@@ -108,6 +108,15 @@
 	>;
     };
 
+    workman_hw_layer {
+      bindings = <
+	&kp Q      &kp D      &kp R       &kp W       &kp B  &kp J &kp F       &kp U       &kp P      &kp SQT
+        &hm LGUI A &hm LALT S &hm LCTRL H &hm LSHFT T &kp G  &kp Y &hm LSHFT N &hm LCTRL E &hm LALT O &hm LGUI I
+	&kp Z      &kp X      &kp M       &kp C       &kp V  &kp K &kp L       &kp COMMA   &kp DOT    &kp SLASH
+	&trans &trans &trans &trans
+	>;
+    };
+
     num_layer {
       bindings = <
 	&kp EQUAL &kp N7 &kp N8 &kp N9 &trans &trans &trans    &trans    &trans   &trans
@@ -144,14 +153,6 @@
 	>;
     };
 
-    workman_hw_layer {
-      bindings = <
-	&kp Q      &kp D      &kp R       &kp W       &kp B  &kp J &kp F       &kp U       &kp P      &kp SQT
-        &hm LGUI A &hm LALT S &hm LCTRL H &hm LSHFT T &kp G  &kp Y &hm LSHFT N &hm LCTRL E &hm LALT O &hm LGUI I
-	&kp Z      &kp X      &kp M       &kp C       &kp V  &kp K &kp L       &kp COMMA   &kp DOT    &kp SLASH
-	&trans &trans &trans &trans
-	>;
-    };
   };
 };
 
