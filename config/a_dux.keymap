@@ -149,7 +149,7 @@
 	&kp Q      &kp D      &kp R       &kp W       &kp B  &kp J &kp F       &kp U       &kp P      &kp SQT
         &hm LGUI A &hm LALT S &hm LCTRL H &hm LSHFT T &kp G  &kp Y &hm LSHFT N &hm LCTRL E &hm LALT O &hm LGUI I
 	&kp Z      &kp X      &kp M       &kp C       &kp V  &kp K &kp L       &kp COMMA   &kp DOT    &kp SLASH
-	&lt CTL SPC &lt MISC TAB &lt SYM ENTER &lt NUM BSPC
+	&trans &trans &trans &trans
 	>;
     };
   };
