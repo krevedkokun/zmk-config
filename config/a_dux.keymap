@@ -11,6 +11,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT  0
 #define WORKMAN  1
@@ -19,9 +20,7 @@
 #define MISC     4
 #define CTL      5
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS DEL BSPC>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS DEL BSPC>; };
 
 &lt {
     quick-tap-ms = <175>;
@@ -162,7 +161,7 @@
 
         ctrl_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &bootloader                    &bootloader  &to 0          &to 1          &trans         &trans
+&trans  &trans  &trans  &trans  &bootloader                    &bootloader  &to 0          &to 1          &trans         &out OUT_TOG
 &trans  &trans  &trans  &trans  &sys_reset                     &sys_reset   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
 &trans  &trans  &trans  &trans  &trans                         &bt BT_CLR   &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3
                                 &trans       &trans    &trans  &trans
