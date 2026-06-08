@@ -1,0 +1,124 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&lt {
+    tapping-term-ms = <210>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    flavor = "balanced";
+    hold-trigger-on-release;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <13 16>;
+        };
+
+        caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <4 14>;
+            layers = <0>;
+        };
+
+        shift_caps {
+            bindings = <&kp LS(CAPSLOCK)>;
+            key-positions = <5 15>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        rhm: rhm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <210>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <4 14 25 34 33 32 24 13 3 2 12 23 22 11 1 0 10 21 20>;
+            hold-trigger-on-release;
+        };
+
+        lhm: lhm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <210>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <5 6 7 8 9 31 19 18 17 16 15 26 27 28 29 30 37 36 35>;
+            hold-trigger-on-release;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            label = "BASE";
+            bindings = <
+                        &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O        &kp SINGLE_QUOTE
+                        &lhm LGUI A  &lhm LALT S  &lhm LCTRL D  &lhm LSHFT F  &kp G        &kp H        &rhm LSHIFT J    &rhm LCTRL K  &rhm LALT L  &rhm LGUI SEMI
+&lhm RALT LEFT_BRACKET  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N        &kp M            &kp COMMA     &kp DOT      &kp FSLH          &rhm RALT RIGHT_BRACKET
+                                                  &lt 5 ESCAPE  &kp SPACE     &lt 4 TAB    &lt 2 ENTER  &lt 1 BACKSPACE  &lt 3 DELETE
+            >;
+        };
+
+        num_layer {
+            bindings = <
+        &kp EQUAL      &kp N7  &kp N8  &kp N9  &trans    &trans  &trans      &trans     &trans    &trans
+        &kp MINUS      &kp N4  &kp N5  &kp N6  &kp N0    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
+&trans  &kp BACKSLASH  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans      &trans     &trans    &trans    &trans
+                               &trans  &trans  &trans    &trans  &trans      &trans
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+        &kp PLUS        &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans  &trans      &trans     &trans    &trans
+        &kp UNDERSCORE  &kp DOLLAR       &kp PERCENT   &kp CARET             &kp P                    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
+&trans  &kp PIPE        &kp EXCLAMATION  &kp AT        &kp HASH              &kp GRAVE                &trans  &trans      &trans     &trans    &trans    &trans
+                                         &trans        &trans                &trans                   &trans  &trans      &trans
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+        &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &trans      &trans     &trans    &trans
+        &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &trans  &trans      &trans     &trans    &trans    &trans
+                         &trans   &trans   &trans    &trans  &trans      &trans
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+        &trans    &trans    &trans     &trans     &trans    &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW     &kp DOWN_ARROW   &kp UP_ARROW          &kp RIGHT_ARROW
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &kp HOME           &kp PAGE_DOWN    &kp PAGE_UP           &kp END               &trans
+                            &trans     &trans     &trans    &trans  &trans             &trans
+            >;
+        };
+
+        bt_layer {
+            bindings = <
+        &trans    &trans    &trans     &trans     &trans    &bt BT_CLR_ALL  &trans         &trans         &trans         &trans
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &bt BT_CLR      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+&trans  &trans    &trans    &trans     &trans     &trans    &trans          &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &out OUT_TOG
+                            &trans     &trans     &trans    &trans          &trans         &trans
+            >;
+        };
+    };
+};

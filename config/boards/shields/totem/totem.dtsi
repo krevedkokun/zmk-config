@@ -1,0 +1,99 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &totem_physical_layout;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <10>;
+        rows = <4>;
+//             | SW01  | SW02  | SW03  | SW04  | SW05  |  | SW05  | SW04  | SW03  | SW02  | SW01  |
+//             | SW06  | SW07  | SW08  | SW09  | SW10  |  | SW10  | SW09  | SW08  | SW07  | SW06  |
+//      | SW16 | SW11  | SW12  | SW13  | SW14  | SW15  |  | SW15  | SW14  | SW13  | SW12  | SW11  | SW16  |
+//                             | SW17  | SW18  | SW19  |  | SW19  | SW18  | SW17  |
+        map = <
+                RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)    RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9)
+                RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4)    RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9)
+        RC(3,0) RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)    RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(3,9)
+                                RC(3,2) RC(3,3) RC(3,4)    RC(3,5) RC(3,6) RC(3,7)
+        >;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "col2row";
+        row-gpios
+            = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    totem_physical_layout: totem_physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "TOTEM";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+
+        keys
+            // Row 0: Q W E R T | Y U I O P
+            = <&key_physical_attrs 100 100   266   480   0   0   0>
+            , <&key_physical_attrs 100 100   387   387   0   0   0>
+            , <&key_physical_attrs 100 100   512   326   0   0   0>
+            , <&key_physical_attrs 100 100   620   375   0   0   0>
+            , <&key_physical_attrs 100 100   728   392   0   0   0>
+            , <&key_physical_attrs 100 100  1073   392   0   0   0>
+            , <&key_physical_attrs 100 100  1181   375   0   0   0>
+            , <&key_physical_attrs 100 100  1289   326   0   0   0>
+            , <&key_physical_attrs 100 100  1412   387   0   0   0>
+            , <&key_physical_attrs 100 100  1533   480   0   0   0>
+
+            // Row 1: A S D F G | H J K L ;
+            , <&key_physical_attrs 100 100   284   581   0   0   0>
+            , <&key_physical_attrs 100 100   395   489   0   0   0>
+            , <&key_physical_attrs 100 100   512   428   0   0   0>
+            , <&key_physical_attrs 100 100   620   477   0   0   0>
+            , <&key_physical_attrs 100 100   728   494   0   0   0>
+            , <&key_physical_attrs 100 100  1073   495   0   0   0>
+            , <&key_physical_attrs 100 100  1181   477   0   0   0>
+            , <&key_physical_attrs 100 100  1289   428   0   0   0>
+            , <&key_physical_attrs 100 100  1404   489   0   0   0>
+            , <&key_physical_attrs 100 100  1515   581   0   0   0>
+
+            // Row 2: [outer] Z X C V B | N M , . / [outer]
+            , <&key_physical_attrs 100 100   188   654   0   0   0>
+            , <&key_physical_attrs 100 100   302   681   0   0   0>
+            , <&key_physical_attrs 100 100   402   590   0   0   0>
+            , <&key_physical_attrs 100 100   512   530   0   0   0>
+            , <&key_physical_attrs 100 100   620   579   0   0   0>
+            , <&key_physical_attrs 100 100   728   596   0   0   0>
+            , <&key_physical_attrs 100 100  1073   597   0   0   0>
+            , <&key_physical_attrs 100 100  1181   579   0   0   0>
+            , <&key_physical_attrs 100 100  1289   530   0   0   0>
+            , <&key_physical_attrs 100 100  1398   590   0   0   0>
+            , <&key_physical_attrs 100 100  1499   681   0   0   0>
+            , <&key_physical_attrs 100 100  1613   654   0   0   0>
+
+            // Row 3: thumbs (3+3)
+            , <&key_physical_attrs 100 100   588   704   0   0   0>
+            , <&key_physical_attrs 100 100   708   720   0   0   0>
+            , <&key_physical_attrs 100 100   819   767   0   0   0>
+            , <&key_physical_attrs 100 100   981   767   0   0   0>
+            , <&key_physical_attrs 100 100  1092   720   0   0   0>
+            , <&key_physical_attrs 100 100  1211   704   0   0   0>
+            ;
+    };
+};
