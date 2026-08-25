@@ -1,43 +1,30 @@
-# This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
-#
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
-#
----
 include:
   - board: nice_nano//zmk
     shield: a_dux_left
   - board: nice_nano//zmk
     shield: a_dux_right
-  # --- Prospector dongle (central) ---
+
   - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
     artifact-name: totem_dongle
 
-  # --- halves, dongle mode (both peripheral) ---
   - board: xiao_ble//zmk
     shield: totem_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: totem_left_peripheral
   - board: xiao_ble//zmk
     shield: totem_right
-    artifact-name: totem_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: totem_right_peripheral
 
-  # --- standalone fallback (left is central, no dongle) ---
   - board: xiao_ble//zmk
     shield: totem_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: totem_left_standalone
+    artifact-name: totem_left
+  - board: xiao_ble//zmk
+    shield: totem_right
+    artifact-name: totem_right
 
-  # --- bond wipe, needed when switching between the two modes ---
   - board: xiao_ble//zmk
     shield: settings_reset
