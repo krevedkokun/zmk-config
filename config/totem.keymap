@@ -67,7 +67,7 @@
         compatible = "zmk,keymap";
 
         base_layer {
-            label = "BASE";
+            display-name = "BASE";
             bindings = <
                         &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O        &kp SINGLE_QUOTE
                         &lhm LGUI A  &lhm LALT S  &lhm LCTRL D  &lhm LSHFT F  &kp G        &kp H        &rhm LSHIFT J    &rhm LCTRL K  &rhm LALT L  &rhm LGUI SEMI
@@ -77,6 +77,7 @@
         };
 
         num_layer {
+            display-name = "NUM";
             bindings = <
         &kp EQUAL      &kp N7  &kp N8  &kp N9  &trans    &trans  &trans      &trans     &trans    &trans
         &kp MINUS      &kp N4  &kp N5  &kp N6  &kp N0    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -86,6 +87,7 @@
         };
 
         sym_layer {
+            display-name = "SYM";
             bindings = <
         &kp PLUS        &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans  &trans      &trans     &trans    &trans
         &kp UNDERSCORE  &kp DOLLAR       &kp PERCENT   &kp CARET             &kp P                    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -95,6 +97,7 @@
         };
 
         fn_layer {
+            display-name = "FN";
             bindings = <
         &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &trans      &trans     &trans    &trans
         &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -104,6 +107,7 @@
         };
 
         nav_layer {
+            display-name = "NAV";
             bindings = <
         &trans    &trans    &trans     &trans     &trans    &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
         &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW     &kp DOWN_ARROW   &kp UP_ARROW          &kp RIGHT_ARROW
@@ -113,6 +117,7 @@
         };
 
         bt_layer {
+            display-name = "BT";
             bindings = <
         &trans    &trans    &trans     &trans     &trans    &bt BT_CLR_ALL  &trans         &trans         &trans         &trans
         &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &bt BT_CLR      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
